@@ -5,17 +5,15 @@ package com.zero.test.base.view;
  */
 public interface BaseView {
 
-    public void setTitle();
+    void showProgress();
 
-    public void showProgress();
+    void hideProgress();
 
-    public void hideProgress();
+    void showMessage();
 
-    public void showMessage();
+    void setDataError();
 
-    public void setDataError();
+    void setDataSuccess();
 
-    public void setDataSuccess();
-
-    public void jumpToActivity();
+    void jumpToActivity();
 }

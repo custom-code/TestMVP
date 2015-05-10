@@ -10,14 +10,16 @@ import com.zero.test.R;
 import com.zero.test.app.presenter.impl.TestPresenterImpl;
 import com.zero.test.base.activity.BaseActivity;
 import com.zero.test.base.presenter.BasePresenter;
+import com.zero.test.base.widget.CountdownView;
 
 /**
- * Created by ’‹ on 2015/5/10.
+ * Created by Âì≤ on 2015/5/10.
  */
 public class TestActivity extends BaseActivity {
     private Context context;
     private Button mBtnSubmit;
     private TextView mTvText;
+    private CountdownView mCountdownView;
     private BasePresenter basePresenter;
 
     @Override
@@ -25,13 +27,16 @@ public class TestActivity extends BaseActivity {
         context = TestActivity.this;
         setContentView(R.layout.test_layout);
         basePresenter = new TestPresenterImpl(this);
-        initView();
     }
 
-    private void initView() {
+    @Override
+    protected void initView() {
+        basePresenter.onViewCreate();
         mBtnSubmit = (Button) findViewById(R.id.test_button);
         mTvText = (TextView) findViewById(R.id.test_text);
+        mCountdownView = (CountdownView) findViewById(R.id.test_countdown);
         mBtnSubmit.setOnClickListener(this);
+        mCountdownView.setOnClickListener(this);
     }
 
     @Override
@@ -40,17 +45,20 @@ public class TestActivity extends BaseActivity {
             case R.id.test_button:
                 basePresenter.onStart();
                 break;
+            case R.id.test_countdown:
+                mCountdownView.startCountDown();
+                break;
         }
     }
 
     @Override
     protected String setViewTitle() {
-        return "≤‚ ‘ΩÁ√Ê";
+        return "Ê∂àÊÅØÁïåÈù¢";
     }
 
     @Override
     public void showMessage() {
-        Toast.makeText(context, "œ˚œ¢", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Ê∂àÊÅØ", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="countdown_view">
+        <attr name="custom_text" format="string"/>
+        <attr name="custom_src" format="reference"/>
+    </declare-styleable>
+</resources>

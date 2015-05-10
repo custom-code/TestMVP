@@ -17,6 +17,8 @@ public abstract class BaseActivity extends FragmentActivity implements BaseView,
 
     protected abstract void setContentView(Bundle savedInstanceState);
 
+    protected abstract void initView();
+
     protected abstract void setViewClick(View view);
 
     protected abstract String setViewTitle();
@@ -25,9 +27,11 @@ public abstract class BaseActivity extends FragmentActivity implements BaseView,
     /**
      * 加载公共布局
      */
-    protected void initBaseView() {
+    private void initBaseView() {
         progressBar = (ProgressBar) findViewById(R.id.base_progress);
         title = (TextView) findViewById(R.id.base_title);
+        title.setText(setViewTitle());
+        initView();
     }
 
     @Override
@@ -40,11 +44,6 @@ public abstract class BaseActivity extends FragmentActivity implements BaseView,
     @Override
     public void onClick(View view) {
         setViewClick(view);
-    }
-
-    @Override
-    public void setTitle() {
-        title.setText(setViewTitle());
     }
 
     @Override

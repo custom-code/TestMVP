@@ -17,10 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".app.activity.MainActivity" android:label="主界面"/>
         <activity
-                android:name=".base.activity.view.BaseActivity"
-                android:label="基础Activity"/>
+                android:name=".app.activity.MainActivity"
+                android:label="主界面"/>
         <activity android:name=".app.activity.TestActivity"/>
     </application>
 </manifest> 
