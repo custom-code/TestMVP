@@ -3,13 +3,13 @@ package com.zero.test.app.presenter.impl;
 import com.zero.test.app.interactor.TestInteractor;
 import com.zero.test.app.interactor.impl.TestInteractorImpl;
 import com.zero.test.app.presenter.TestPresenter;
-import com.zero.test.base.listener.BaseListener;
+import com.zero.test.base.listener.BaseInteractorListener;
 import com.zero.test.base.view.BaseView;
 
 /**
  * Created by ем on 2015/5/10.
  */
-public class TestPresenterImpl implements TestPresenter, BaseListener {
+public class TestPresenterImpl implements TestPresenter, BaseInteractorListener {
 
     private BaseView baseView;
     private TestInteractor testInteractor;
