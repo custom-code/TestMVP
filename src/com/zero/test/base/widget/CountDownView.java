@@ -12,16 +12,16 @@ import com.zero.test.base.listener.OnCountDownListener;
 /**
  * Created by 哲 on 2015/5/10.
  */
-public class CountDownView1 extends TextView {
+public class CountDownView extends TextView {
     private OnCountDownListener listener;
     private CountDownTimer timer;
     private boolean isTick = false;//是否正在倒计时
 
-    public CountDownView1(Context context) {
+    public CountDownView(Context context) {
         super(context);
     }
 
-    public CountDownView1(Context context, AttributeSet attrs) {
+    public CountDownView(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.countdown_view);
         for (int i = 0; i < typedArray.getIndexCount(); i++) {
@@ -29,18 +29,18 @@ public class CountDownView1 extends TextView {
             switch (attr) {
                 case R.styleable.countdown_view_custom_text:
                     CharSequence text = typedArray.getText(attr);
-                    CountDownView1.this.setText(text);
+                    CountDownView.this.setText(text);
                     break;
                 case R.styleable.countdown_view_custom_src:
                     Drawable drawable = typedArray.getDrawable(attr);
-                    CountDownView1.this.setBackgroundDrawable(drawable);
+                    CountDownView.this.setBackgroundDrawable(drawable);
                     break;
             }
         }
         typedArray.recycle();
     }
 
-    public CountDownView1(Context context, AttributeSet attrs, int defStyle) {
+    public CountDownView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         //TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CountdownView, defStyle, 0);
     }
@@ -63,13 +63,13 @@ public class CountDownView1 extends TextView {
      */
     private void setViewState() {
         if (isTick) {
-            CountDownView1.this.setEnabled(true);
-            CountDownView1.this.setClickable(true);
+            CountDownView.this.setEnabled(true);
+            CountDownView.this.setClickable(true);
             isTick = false;
         } else {
             isTick = true;
-            CountDownView1.this.setEnabled(false);
-            CountDownView1.this.setClickable(false);
+            CountDownView.this.setEnabled(false);
+            CountDownView.this.setClickable(false);
         }
     }
 
@@ -81,12 +81,12 @@ public class CountDownView1 extends TextView {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            CountDownView1.this.setText("还剩" + millisUntilFinished / 1000 + "秒");
+            CountDownView.this.setText("还剩" + millisUntilFinished / 1000 + "秒");
         }
 
         @Override
         public void onFinish() {
-            CountDownView1.this.setText("倒计时完成");
+            CountDownView.this.setText("倒计时完成");
             setViewState();
             listener.onFinished();
         }
