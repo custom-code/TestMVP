@@ -10,7 +10,7 @@ import com.zero.test.app.presenter.impl.TestPresenterImpl;
 import com.zero.test.base.activity.BaseActivity;
 import com.zero.test.base.listener.OnCountDownListener;
 import com.zero.test.base.presenter.BasePresenter;
-import com.zero.test.base.widget.CountDownView;
+import com.zero.test.base.widget.CountDownView1;
 
 /**
  * Created by 哲 on 2015/5/10.
@@ -19,7 +19,7 @@ public class TestActivity extends BaseActivity implements OnCountDownListener {
     private Context context;
     private Button mBtnSubmit;
     private TextView mTvText;
-    private CountDownView mCountdownView;
+    private CountDownView1 mCountdownView1;
     private BasePresenter basePresenter;
 
     @Override
@@ -34,10 +34,10 @@ public class TestActivity extends BaseActivity implements OnCountDownListener {
         basePresenter.onViewCreate();
         mBtnSubmit = (Button) findViewById(R.id.test_button);
         mTvText = (TextView) findViewById(R.id.test_text);
-        mCountdownView = (CountDownView) findViewById(R.id.test_countdown);
+        mCountdownView1 = (CountDownView1) findViewById(R.id.test_countdown);
         mBtnSubmit.setOnClickListener(this);
-        mCountdownView.setOnClickListener(this);
-        mCountdownView.setCountDownListener(this);
+        mCountdownView1.setOnClickListener(this);
+        mCountdownView1.setCountDownListener(this);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class TestActivity extends BaseActivity implements OnCountDownListener {
                 basePresenter.onStart();
                 break;
             case R.id.test_countdown:
-                mCountdownView.startCountDown();
+                mCountdownView1.startCountDown();
                 break;
         }
     }

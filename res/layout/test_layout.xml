@@ -26,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-            <com.zero.test.base.widget.CountDownView
+            <com.zero.test.base.widget.CountDownView1
                     android:id="@+id/test_countdown"
                     android:layout_below="@id/test_text"
                     android:layout_width="wrap_content"
