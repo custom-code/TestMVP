@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.widget.RadioButton;
 
 /**
- * 提供一个可以居中显示图片的RadioButton
+ * 鎻愪緵涓�涓彲浠ュ眳涓樉绀哄浘鐗囩殑RadioButton
  */
 public class CenterRadioButton extends RadioButton {
 

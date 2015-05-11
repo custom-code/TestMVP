@@ -11,15 +11,18 @@ import com.zero.test.base.activity.BaseActivity;
 import com.zero.test.base.listener.OnCountDownListener;
 import com.zero.test.base.presenter.BasePresenter;
 import com.zero.test.base.widget.CountDownView;
+import com.zero.test.base.widget.PullToRefreshView;
 
 /**
  * Created by 哲 on 2015/5/10.
  */
-public class TestActivity extends BaseActivity implements OnCountDownListener {
+public class TestActivity extends BaseActivity implements OnCountDownListener, PullToRefreshView.OnFooterRefreshListener, PullToRefreshView.OnHeaderRefreshListener {
     private Context context;
     private Button mBtnSubmit;
     private TextView mTvText;
     private CountDownView mCountdownView;
+    private PullToRefreshView mRefreshView;
+
     private BasePresenter basePresenter;
 
     @Override
@@ -35,9 +38,12 @@ public class TestActivity extends BaseActivity implements OnCountDownListener {
         mBtnSubmit = (Button) findViewById(R.id.test_button);
         mTvText = (TextView) findViewById(R.id.test_text);
         mCountdownView = (CountDownView) findViewById(R.id.test_countdown);
+        mRefreshView = (PullToRefreshView) findViewById(R.id.test_refresh_view);
         mBtnSubmit.setOnClickListener(this);
         mCountdownView.setOnClickListener(this);
         mCountdownView.setCountDownListener(this);
+        mRefreshView.setOnFooterRefreshListener(this);
+        mRefreshView.setOnHeaderRefreshListener(this);
     }
 
     @Override
@@ -80,5 +86,23 @@ public class TestActivity extends BaseActivity implements OnCountDownListener {
     @Override
     public void onFinished() {
         showToast("计时结束");
+    }
+
+    @Override
+    public void onFooterRefresh(PullToRefreshView view) {
+        mRefreshView.onFooterRefreshComplete();
+    }
+
+    @Override
+    public void onHeaderRefresh(PullToRefreshView view) {
+        mRefreshView.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                // 设置更新时间
+//                mRefreshView.onHeaderRefreshComplete("最近更新:" + );
+                mRefreshView.onHeaderRefreshComplete();
+            }
+        }, 200);
     }
 }

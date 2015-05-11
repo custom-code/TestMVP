@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
- * Ô²ÐÎµÄimageview
+ * åœ†å½¢imageview
  */
 public class CircleImage extends ImageView {
 
@@ -47,7 +47,7 @@ public class CircleImage extends ImageView {
     }
 
     /*
-     * ¶ÔBitmap²Ã¼ô£¬Ê¹Æä±ä³ÉÔ²ÐÎ£¬Õâ²½×î¹Ø¼ü
+     * ï¿½ï¿½Bitmapï¿½Ã¼ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Ô²ï¿½Î£ï¿½ï¿½â²½ï¿½ï¿½Ø¼ï¿½
      */
     public static Bitmap getCroppedBitmap(Bitmap bmp, int radius) {
         Bitmap sbmp;
