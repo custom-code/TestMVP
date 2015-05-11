@@ -21,7 +21,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 图片加载工具
+ * 图片加载工具类
  */
 public class ImageLoader {
 
