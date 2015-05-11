@@ -20,6 +20,9 @@ import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 图片加载工具
+ */
 public class ImageLoader {
 
     public MemoryCache memoryCache = new MemoryCache();
