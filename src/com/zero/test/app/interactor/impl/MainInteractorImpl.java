@@ -8,11 +8,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
 public class MainInteractorImpl implements MainInteractor {
     @Override
-    public void getData(OnLoadDataFinishedListener onLoadDataFinishedListener) {
+    public void getData(final OnLoadDataFinishedListener onLoadDataFinishedListener) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

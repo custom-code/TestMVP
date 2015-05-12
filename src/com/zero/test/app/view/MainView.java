@@ -3,14 +3,14 @@ package com.zero.test.app.view;
 import java.util.List;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
 public interface MainView {
-    public void showProgressBar();
+    void showProgressBar();
 
-    public void hideProgressBar();
+    void hideProgressBar();
 
-    public void showNoData();
+    void showNoData();
 
-    public void showData(List<String> items);
+    void showData(List<String> items);
 }

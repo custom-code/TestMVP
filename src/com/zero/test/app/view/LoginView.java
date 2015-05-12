@@ -1,18 +1,18 @@
 package com.zero.test.app.view;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
 public interface LoginView {
-    public void showToast(String msg);
+    void showToast(String msg);
 
-    public void showProgress();
+    void showProgress();
 
-    public void hideProgress();
+    void hideProgress();
 
-    public void setUserNameError();
+    void setUserNameError();
 
-    public void setPasswordError();
+    void setPasswordError();
 
-    public void jumpToMainActivity();
+    void jumpToMainActivity();
 }

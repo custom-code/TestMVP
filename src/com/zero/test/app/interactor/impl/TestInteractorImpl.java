@@ -12,7 +12,7 @@ public class TestInteractorImpl implements TestInteractor {
     }
 
     @Override
-    public void getData(BaseInteractorListener baseListener) {
+    public void getData(final BaseInteractorListener baseListener) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

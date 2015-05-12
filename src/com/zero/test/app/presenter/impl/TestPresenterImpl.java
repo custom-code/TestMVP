@@ -7,7 +7,7 @@ import com.zero.test.base.listener.BaseInteractorListener;
 import com.zero.test.base.view.BaseView;
 
 /**
- * Created by ХЬ on 2015/5/10.
+ * Created by е“І on 2015/5/10.
  */
 public class TestPresenterImpl implements TestPresenter, BaseInteractorListener {
 

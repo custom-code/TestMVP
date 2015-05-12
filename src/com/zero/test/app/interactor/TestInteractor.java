@@ -4,8 +4,8 @@ import com.zero.test.base.interactor.BaseInteractor;
 import com.zero.test.base.listener.BaseInteractorListener;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
-public interface TestInteractor extends BaseInteractor{
-    public void login(String username, String password, BaseInteractorListener listener);
+public interface TestInteractor extends BaseInteractor {
+    void login(String username, String password, BaseInteractorListener listener);
 }

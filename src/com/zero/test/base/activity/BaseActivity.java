@@ -11,7 +11,7 @@ import com.zero.test.R;
 import com.zero.test.base.view.BaseView;
 
 /**
- * Created by ÕÜ on 2015/5/10.
+ * Created by å“² on 2015/5/10.
  */
 public abstract class BaseActivity extends FragmentActivity implements BaseView, View.OnClickListener {
     private Context context;
@@ -50,7 +50,7 @@ public abstract class BaseActivity extends FragmentActivity implements BaseView,
     }
 
     /**
-     * ¼ÓÔØ¹«¹²²¼¾Ö
+     * åŠ è½½å…¬å…±å¸ƒå±€
      */
     private void initBaseView() {
         progressBar = (ProgressBar) findViewById(R.id.base_progress);
@@ -60,9 +60,9 @@ public abstract class BaseActivity extends FragmentActivity implements BaseView,
     }
 
     /**
-     * ÏÔÊ¾µ¯³ö¿ò
+     * æ˜¾ç¤ºå¼¹å‡ºæ¡†
      *
-     * @param str
+     * @param str å¼¹å‡ºæ¡†å­—ç¬¦ä¸²
      */
     protected void showToast(String str) {
         Toast.makeText(context, str, Toast.LENGTH_SHORT).show();

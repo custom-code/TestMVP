@@ -1,7 +1,7 @@
 package com.zero.test.base.presenter;
 
 /**
- * Created by ХЬ on 2015/5/10.
+ * Created by е“І on 2015/5/10.
  */
 public interface BasePresenter {
     void onViewCreate();

@@ -3,9 +3,9 @@ package com.zero.test.app.interactor;
 import com.zero.test.app.listener.OnLoadDataFinishedListener;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
 public interface MainInteractor {
 
-    public void getData(OnLoadDataFinishedListener onLoadDataFinishedListener);
+    void getData(OnLoadDataFinishedListener onLoadDataFinishedListener);
 }

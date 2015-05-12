@@ -1,9 +1,9 @@
 package com.zero.test.base.listener;
 
 /**
- * Created by ÕÜ on 2015/5/10.
+ * Created by ï¿½ï¿½ on 2015/5/10.
  */
-public interface BaseInteractorListener   {
+public interface BaseInteractorListener {
     void onFinish();
 
     void onError();

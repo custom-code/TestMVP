@@ -21,5 +21,8 @@
                 android:name=".app.activity.MainActivity"
                 android:label="主界面"/>
         <activity android:name=".app.activity.TestActivity"/>
+        <activity
+                android:name=".app.activity.XListViewTestActivity"
+                android:label="测试xlistview"/>
     </application>
 </manifest> 

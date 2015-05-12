@@ -1,12 +1,12 @@
 package com.zero.test.app.listener;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
 public interface OnLoginFinishedListener {
-    public void onUserNameError();
+    void onUserNameError();
 
-    public void onPasswordError();
+    void onPasswordError();
 
-    public void onSuccess();
+    void onSuccess();
 }

@@ -16,9 +16,9 @@ import com.zero.test.app.view.MainView;
 import java.util.List;
 
 /**
- * Created by ХЬ on 2015/5/9.
+ * Created by е“І on 2015/5/9.
  */
-public class MainActivity extends Activity implements MainView,AdapterView.OnItemClickListener {
+public class MainActivity extends Activity implements MainView, AdapterView.OnItemClickListener {
     private Context context;
     private ListView mLvList;
     private ProgressBar mProgressBar;
