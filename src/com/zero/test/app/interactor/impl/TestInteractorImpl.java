@@ -19,6 +19,6 @@ public class TestInteractorImpl implements TestInteractor {
                 baseListener.onError();
                 baseListener.onFinish();
             }
-        }, 2000);
+        }, 1000);
     }
 }

@@ -15,6 +15,9 @@ import com.zero.test.R;
 import java.util.Date;
 
 
+/**
+ * 下拉刷新的view
+ */
 public class PullToRefreshView extends LinearLayout {
     private static final String TAG = "PullToRefreshView";
     // refresh states

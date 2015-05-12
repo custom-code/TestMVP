@@ -1,6 +1,7 @@
 package com.zero.test.app.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,6 @@ public class TestActivity extends BaseActivity implements OnCountDownListener, P
 
     @Override
     protected void initView() {
-        basePresenter.onViewCreate();
         mBtnSubmit = (Button) findViewById(R.id.test_button);
         mTvText = (TextView) findViewById(R.id.test_text);
         mCountdownView = (CountDownView) findViewById(R.id.test_countdown);
@@ -80,7 +80,7 @@ public class TestActivity extends BaseActivity implements OnCountDownListener, P
 
     @Override
     public void jumpToActivity() {
-
+        startActivity(new Intent(context, XListViewTestActivity.class));
     }
 
     @Override

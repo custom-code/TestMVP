@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
- * 圆形imageview
+ * 圆形ImageView
  */
 public class CircleImage extends ImageView {
 

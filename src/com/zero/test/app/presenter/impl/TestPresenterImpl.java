@@ -20,11 +20,6 @@ public class TestPresenterImpl implements TestPresenter, BaseInteractorListener 
     }
 
     @Override
-    public void onViewCreate() {
-
-    }
-
-    @Override
     public void onStart() {
         baseView.showProgress();
         testInteractor.getData(this);
