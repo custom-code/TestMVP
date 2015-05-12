@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.zero.test.R;
 import com.zero.test.base.activity.BaseActivity;
-import com.zero.test.base.view.xlistview.XListView;
+import com.zero.test.base.widget.xlistview.XListView;
 
 /**
  * Created by wangzhe on 2015/5/11.

@@ -4,7 +4,7 @@
  * @author Maxwin
  * @description XListView's footer
  */
-package com.zero.test.base.view.xlistview;
+package com.zero.test.base.widget.xlistview;
 
 import android.content.Context;
 import android.util.AttributeSet;
