@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import com.umeng.analytics.MobclickAgent;
 import com.zero.test.R;
 import com.zero.test.base.activity.BaseActivity;
 import com.zero.test.base.widget.xlistview.XListView;
@@ -25,8 +26,9 @@ public class XListViewTestActivity extends BaseActivity implements XListView.IXL
 
     @Override
     protected void setContentView(Bundle savedInstanceState) {
-        setContentView(R.layout.xlistview_test_layout);
         context = XListViewTestActivity.this;
+        setContentView(R.layout.xlistview_test_layout);
+        MobclickAgent.onResume(this);
         initView();
     }
 
@@ -41,6 +43,12 @@ public class XListViewTestActivity extends BaseActivity implements XListView.IXL
         mAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, items);//用模拟的数据填充系统的adapter
         mXListView.setAdapter(mAdapter);//指定adapter
         mHandler = new Handler();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     private void geneItems() {

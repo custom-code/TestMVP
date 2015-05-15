@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import com.umeng.analytics.MobclickAgent;
 import com.zero.test.R;
 import com.zero.test.app.presenter.impl.TestPresenterImpl;
 import com.zero.test.base.activity.BaseActivity;
@@ -19,7 +20,7 @@ import com.zero.test.base.widget.PullToRefreshView;
  */
 public class TestActivity extends BaseActivity implements OnCountDownListener, PullToRefreshView.OnFooterRefreshListener, PullToRefreshView.OnHeaderRefreshListener {
     private Context context;
-    private Button mBtnSubmit;
+    private Button mBtnSubmit,mBtnToMap;
     private TextView mTvText;
     private CountDownView mCountdownView;
     private PullToRefreshView mRefreshView;
@@ -30,20 +31,29 @@ public class TestActivity extends BaseActivity implements OnCountDownListener, P
     protected void setContentView(Bundle savedInstanceState) {
         context = TestActivity.this;
         setContentView(R.layout.test_layout);
+        MobclickAgent.onResume(this);
         basePresenter = new TestPresenterImpl(this);
     }
 
     @Override
     protected void initView() {
         mBtnSubmit = (Button) findViewById(R.id.test_button);
+        mBtnToMap = (Button) findViewById(R.id.test_to_baidu_map);
         mTvText = (TextView) findViewById(R.id.test_text);
         mCountdownView = (CountDownView) findViewById(R.id.test_countdown);
         mRefreshView = (PullToRefreshView) findViewById(R.id.test_refresh_view);
         mBtnSubmit.setOnClickListener(this);
+        mBtnToMap.setOnClickListener(this);
         mCountdownView.setOnClickListener(this);
         mCountdownView.setCountDownListener(this);
         mRefreshView.setOnFooterRefreshListener(this);
         mRefreshView.setOnHeaderRefreshListener(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override
@@ -54,6 +64,9 @@ public class TestActivity extends BaseActivity implements OnCountDownListener, P
                 break;
             case R.id.test_countdown:
                 mCountdownView.startCountDown();
+                break;
+            case R.id.test_to_baidu_map:
+                startActivity(new Intent(context, BaiduMapAcitivity.class));
                 break;
         }
     }

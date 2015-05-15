@@ -38,4 +38,8 @@ public class TestPresenterImpl implements TestPresenter, BaseInteractorListener 
         baseView.jumpToActivity();
     }
 
+    @Override
+    public void toBaiduMap() {
+
+    }
 }
