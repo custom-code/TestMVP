@@ -1,6 +1,8 @@
 package com.zero.test.base.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -66,5 +68,46 @@ public abstract class BaseActivity extends FragmentActivity implements BaseView,
      */
     protected void showToast(String str) {
         Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 含有标题和内容的对话框 *
+     */
+    protected AlertDialog showAlertDialog(String title, String message) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle(title)
+                .setMessage(message).show();
+        return alertDialog;
+    }
+
+    /**
+     * 含有标题、内容、两个按钮的对话框 *
+     */
+    protected AlertDialog showAlertDialog(String title, String message,
+                                          String positiveText,
+                                          DialogInterface.OnClickListener onPositiveClickListener,
+                                          String negativeText,
+                                          DialogInterface.OnClickListener onNegativeClickListener) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(positiveText, onPositiveClickListener)
+                .setNegativeButton(negativeText, onNegativeClickListener)
+                .show();
+        return alertDialog;
+    }
+
+    /**
+     * 含有标题、内容、图标、两个按钮的对话框 *
+     */
+    protected AlertDialog showAlertDialog(String title, String message,
+                                          int icon, String positiveText,
+                                          DialogInterface.OnClickListener onPositiveClickListener,
+                                          String negativeText,
+                                          DialogInterface.OnClickListener onNegativeClickListener) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle(title)
+                .setMessage(message).setIcon(icon)
+                .setPositiveButton(positiveText, onPositiveClickListener)
+                .setNegativeButton(negativeText, onNegativeClickListener)
+                .show();
+        return alertDialog;
     }
 }
